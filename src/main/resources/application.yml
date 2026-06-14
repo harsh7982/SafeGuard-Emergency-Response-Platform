@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/safeher
+    username: harshprajapat
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: SafeHerAIJWTSecretKey2026SuperSecureKey123456789
+  expiration-ms: 86400000
