@@ -1,0 +1,359 @@
+/* ═══════════════════════════════════════
+   INCIDENT HISTORY PAGE
+═══════════════════════════════════════ */
+
+.history-page {
+  min-height: 100vh;
+  padding: 0;
+  background: #09090b;
+  color: #fafafa;
+}
+
+/* ── Navbar ── */
+.history-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 3.5%;
+  background: rgba(9, 9, 11, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.history-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Sora", sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.history-brand svg {
+  color: var(--rose);
+}
+
+.history-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.history-back-btn:hover {
+  border-color: rgba(251, 113, 133, 0.35);
+  color: #fb7185;
+  background: rgba(225, 29, 72, 0.08);
+}
+
+/* ── Content ── */
+.history-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 5% 60px;
+  animation: fadeUp 0.5s ease;
+}
+
+/* ── Header ── */
+.history-header {
+  margin-bottom: 32px;
+}
+
+.history-title {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #ffffff, #fda4af, #fb7185);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.history-desc {
+  color: #cbd5e1;
+  max-width: 600px;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ── Stats row ── */
+.history-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.history-stat-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s;
+}
+
+.history-stat-card:hover {
+  border-color: rgba(244, 63, 94, 0.15);
+  transform: translateY(-2px);
+}
+
+.history-stat-icon {
+  margin-bottom: 10px;
+}
+
+.history-stat-value {
+  font-family: "Sora", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.history-stat-label {
+  color: #94a3b8;
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+/* ── Filter bar ── */
+.history-filter-bar {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.history-search {
+  flex: 1;
+  min-width: 220px;
+}
+
+.history-filter-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.history-filter-btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.history-filter-btn:hover {
+  border-color: rgba(251, 113, 133, 0.3);
+  color: #e2e8f0;
+}
+
+.history-filter-btn.active {
+  border-color: rgba(251, 113, 133, 0.5);
+  background: rgba(225, 29, 72, 0.15);
+  color: #fb7185;
+}
+
+/* ── Loading ── */
+.history-loading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px;
+  color: #94a3b8;
+  font-size: 0.92rem;
+}
+
+/* ── Empty state ── */
+.history-empty {
+  padding: 52px 24px;
+  text-align: center;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.history-empty svg {
+  color: #334155;
+  margin-bottom: 16px;
+}
+
+.history-empty h3 {
+  font-family: "Sora", sans-serif;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.history-empty p {
+  color: #475569;
+  font-size: 0.9rem;
+}
+
+.history-empty-cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  border-radius: 14px;
+  background: rgba(225, 29, 72, 0.12);
+  border: 1px solid rgba(251, 113, 133, 0.3);
+  color: #fb7185;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.history-empty-cta:hover {
+  background: rgba(225, 29, 72, 0.22);
+  transform: translateY(-2px);
+}
+
+/* ── Incident list ── */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-incident-card {
+  padding: 20px 22px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s;
+}
+
+.history-incident-card:hover {
+  border-color: rgba(244, 63, 94, 0.15);
+  transform: translateY(-2px);
+}
+
+.history-incident-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.history-incident-type-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.history-incident-type-row svg {
+  color: #fb7185;
+  flex-shrink: 0;
+}
+
+.history-incident-type-row h3 {
+  font-family: "Sora", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.history-incident-desc {
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 620px;
+  font-size: 0.9rem;
+}
+
+.history-badges {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.history-status-badge,
+.history-risk-badge {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* ── Incident meta row ── */
+.history-incident-meta {
+  display: flex;
+  gap: 20px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.history-meta-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #60a5fa;
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.history-meta-link:hover {
+  color: #93c5fd;
+}
+
+.history-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 0.86rem;
+}
+
+.history-meta-id {
+  color: #475569;
+  font-size: 0.82rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .history-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .history-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .history-incident-top {
+    flex-direction: column;
+  }
+
+  .history-badges {
+    align-self: flex-start;
+  }
+
+  .history-filter-bar {
+    flex-direction: column;
+  }
+}

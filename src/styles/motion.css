@@ -1,0 +1,128 @@
+/* SafeHer motion language: restrained, legible, and fast around emergency actions. */
+:where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) h1,
+:where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) h2 {
+  text-wrap: balance;
+}
+
+:where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) p {
+  text-wrap: pretty;
+}
+
+.home-nav,.auth-back-home,.dash-navbar,.db-sidebar,.tracking-nav {
+  animation: sh-fade-in .5s ease both;
+}
+
+.home-hero-left,.auth-left-content,.db-topbar,.tracking-header,.gt-hero {
+  animation: sh-reveal .72s cubic-bezier(.2,.8,.2,1) .06s both;
+}
+
+.home-hero-right,.auth-form-card,.db-guardian-banner,.map-panel {
+  animation: sh-reveal .78s cubic-bezier(.2,.8,.2,1) .16s both;
+}
+
+.home-features-header,.home-privacy-copy,.home-mobile-copy,.home-cta,
+.contacts-form,.report-form,.contacts-list,.report-side,
+.tracking-sidebar,.gt-tab-content {
+  animation: sh-reveal .74s cubic-bezier(.2,.8,.2,1) .2s both;
+}
+
+.home-hero-title {
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+
+.home-hero-desc,.auth-left-desc,.db-topbar-sub,.tracking-header p {
+  line-height: 1.75;
+}
+
+.hero-capability-panel,.bento-card,.db-stat-card,.db-action-item,.db-recent-card,
+.contact-card,.activity-row,.tracking-card,.gt-panel,
+.contacts-form,.report-form,.contacts-list,.report-side {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s ease,box-shadow .35s ease,background-color .35s ease;
+}
+
+.hero-capability-panel:hover,.bento-card:hover,.db-stat-card:hover,.db-action-item:hover,
+.contact-card:hover,.activity-row:hover,.tracking-card:hover,.gt-panel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(251,113,133,.28);
+  box-shadow: 0 22px 55px rgba(0,0,0,.22);
+}
+
+.db-stats-row .db-stat-card,.home-bento .bento-card {
+  animation: sh-card-in .65s cubic-bezier(.2,.8,.2,1) both;
+}
+.db-stats-row .db-stat-card:nth-child(2),.home-bento .bento-card:nth-child(2){animation-delay:.07s}
+.db-stats-row .db-stat-card:nth-child(3),.home-bento .bento-card:nth-child(3){animation-delay:.14s}
+.db-stats-row .db-stat-card:nth-child(4),.home-bento .bento-card:nth-child(4){animation-delay:.21s}
+.home-bento .bento-card:nth-child(5){animation-delay:.28s}
+.home-bento .bento-card:nth-child(6){animation-delay:.35s}
+
+:where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) button,
+:where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-btn-primary,.home-nav-cta,.auth-submit-btn,.db-empty-cta,
+.location-btn,.start-tracking-btn,.share-location-btn,.gt-primary-btn {
+  transition: transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease,filter .25s ease;
+}
+
+.home-btn-primary:hover,.home-nav-cta:hover,.auth-submit-btn:hover,
+.db-empty-cta:hover,.location-btn:hover,.start-tracking-btn:hover,
+.share-location-btn:hover,.gt-primary-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.home-btn-primary:active,.home-nav-cta:active,.auth-submit-btn:active,
+.db-empty-cta:active,.location-btn:active,.start-tracking-btn:active,
+.share-location-btn:active,.gt-primary-btn:active {
+  transform: scale(.97);
+}
+
+.input-box,.textarea-box,.manual-location-inputs input {
+  transition: border-color .25s ease,box-shadow .25s ease,background-color .25s ease;
+}
+
+.input-box:focus-within,.textarea-box:focus-within,.manual-location-inputs input:focus {
+  border-color: rgba(251,113,133,.48);
+  box-shadow: 0 0 0 3px rgba(251,113,133,.08);
+}
+
+.status-light,.auth-tag-dot,.home-kicker-dot {
+  animation: sh-status-pulse 2.2s ease-in-out infinite;
+}
+
+.phone-sos-btn,.db-sos-spinner {
+  animation-duration: 3s;
+}
+
+@keyframes sh-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sh-reveal {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sh-card-in {
+  from { opacity: 0; transform: translateY(16px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes sh-status-pulse {
+  50% { opacity: .72; box-shadow: 0 0 0 7px rgba(251,113,133,.07); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) *,
+  :where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) *::before,
+  :where(.home,.auth-page-v2,.db-root,.dash-page,.tracking-page,.assist-page) *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

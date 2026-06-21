@@ -1,0 +1,18 @@
+{
+  "folders": [
+    {
+      "name": "women-safety-frontend",
+      "path": "."
+    },
+    {
+      "name": "women-safety-backend",
+      "path": "../backend-safeher"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/target": true,
+      "**/node_modules": true
+    }
+  }
+}
