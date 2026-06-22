@@ -1,54 +1,92 @@
-# SafeHer Frontend (React + Vite)
+# SafeGuard Emergency Response Platform
 
-## Quick Start
+SafeGuard is a full-stack emergency response and women safety platform designed to provide fast SOS alerts, incident reporting, emergency contact management, live tracking, and secure user authentication.
 
-### Prerequisites
+## Key Features
 
-* Node.js 20+
-* npm 10+
+* Emergency SOS alert system
+* Live location tracking
+* Emergency contact management
+* Incident reporting
+* Evidence upload support
+* AI safety assistant concept
+* JWT-based secure authentication
+* Admin incident monitoring
+* PostgreSQL database integration
 
-### Install and Run
+## Tech Stack
+
+### Frontend
+
+* React
+* Vite
+* React Router
+* Axios
+* CSS3
+
+### Backend
+
+* Java
+* Spring Boot
+* Spring Security
+* JWT Authentication
+* Maven
+
+### Database
+
+* PostgreSQL
+
+## System Architecture
+
+React Frontend
+↓
+Spring Boot Backend
+↓
+PostgreSQL Database
+
+## Project Structure
+
+```text
+SafeGuard-Emergency-Response-Platform/
+├── src/
+├── public/
+├── screenshots/
+├── README.md
+├── package.json
+├── pom.xml
+├── Dockerfile
+├── docker-compose.yml
+└── .env.example
+```
+
+## How to Run the Project
+
+### Frontend
 
 ```bash
 npm install
 npm run dev
 ```
 
-Frontend default URL: `http://localhost:5173`
-
-### Build and Lint
-
-```bash
-npm run lint
-npm run build
-```
-
-## Backend Connection
-
-Create `.env` in frontend root with:
-
-```env
-VITE_API_URL=http://localhost:8080
-```
-
-Restart frontend after changing `.env`.
-
-## Full-stack Run
-
-1. Start backend from `women-safety-backend`:
+### Backend
 
 ```bash
 mvn spring-boot:run
 ```
 
-2. Start frontend from `women-safety-frontend`:
+## Future Enhancements
 
-```bash
-npm run dev
-```
+* AI Guardian Twin
+* Predictive Risk Engine
+* Emergency Evidence Autopilot
+* Smart threat detection
+* Real-time police/admin dashboard
+* Mobile app integration
 
-## VS Code Workspace
+## Author
 
-Open this workspace file to load frontend + backend together:
+Harsh Prajapat
 
-`safeher-fullstack.code-workspace`
+## Status
+
+Project completed for academic/final-year presentation. Screenshots and live deployment will be added soon.
